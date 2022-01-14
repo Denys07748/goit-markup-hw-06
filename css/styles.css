@@ -545,10 +545,29 @@ body {
 
 .btn-close:hover,
 .btn-close:focus {
-    border-color: var(--accent-color);
     color: var(--accent-color);
 }
 
+/* Forma */
+
+.form {
+    padding: 40px;
+}
+
+.form-title {
+    margin-bottom: 12px;
+    font-size: 20px;
+    line-height: 1.15;
+    text-align: center;
+    color: var(--title-text-color);
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+
+}
 
 /*-------------- Page portfolio ------------ */
 
@@ -592,27 +611,26 @@ body {
     overflow: hidden;
 }
 
-.project-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: var(--overlay-color);
-    padding: 63px 24px;
-    transform: translateY(100%);
-    transition: transform var(--transit-time) var(--timing-function);
-}
 
-.project-link:hover .project-overlay,
-.project-link:focus .project-overlay {
+.project-link:hover .project-thumb-text,
+.project-link:focus .project-thumb-text {
     transform: translateY(0);
 }
 
 .project-thumb-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    padding: 63px 24px;
+    
+    background-color: var(--overlay-color);
     color: var(--primery-bg-color);
     font-size: 18px;
     line-height: 1.56;
+
+    transform: translateY(100%);
+    transition: transform var(--transit-time) var(--timing-function);
 }
 
 
