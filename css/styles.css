@@ -18,6 +18,8 @@
     --address-color: rgba(255, 255, 255, 0.6);
     --social-link-bg-color: rgba(255, 255, 255, 0.1);
     --backdrop-bg-color: rgba(0, 0, 0, 0.2);
+    --textarea-color: rgba(117, 117, 117, 0.5);
+    --form-border-color: rgba(33, 33, 33, 0.2);
     --card-gap: 30px;
     --card-item: 3;
     --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -461,13 +463,10 @@ body {
     color: var(--accent-color);
 }
 
-.footer-social-title {
+.footer-social-title,
+.footer-form-title {
     color: var(--primery-bg-color);
-    margin-bottom: 0;
-}
-
-.footer-social .social-list {
-    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .footer-social .social-link {
@@ -479,6 +478,30 @@ body {
 .footer-social .social-link:hover,
 .footer-social .social-link:focus {
     background-color: var(--accent-color);
+}
+
+.footer-form {
+    margin-left: auto;
+}
+
+.footer-form input {
+    min-width: 358px;
+    padding: 15px 16px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    background-color: inherit;
+}
+
+.footer-form input::placeholder {
+    font-size: 16px;
+    line-height: 1.25;
+    color: var(--address-color);
+}
+
+.footer-form-btn {
+    margin-left: 12px;
+    padding-left: 29px;
+    padding-right: 28px;
 }
 
 /* modal window */
@@ -566,8 +589,58 @@ body {
     display: flex;
     flex-direction: column;
     margin-bottom: 10px;
-
 }
+
+.form-field label {
+    margin-bottom: 4px;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.01em;
+}
+
+.form-field input {
+    padding: 11px 12px;
+    border: 1px solid var(--form-border-color);
+    border-radius: 4px;
+}
+
+.form-field.comment {
+    margin-bottom: 20px;
+}
+
+.form-field textarea::placeholder {
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.01em;
+    color: var(--textarea-color);
+}
+
+.form-field textarea {
+    padding: 12px 16px;
+    border: 1px solid var(--form-border-color);
+    border-radius: 4px;
+}
+
+.form-policy {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.form-policy input {
+    width: 16px;
+    height: 15px;
+}
+
+.form-policy label {
+    margin-left: 7px;
+}
+
+.form-btn {
+    padding-left: 56px;
+    padding-right: 55px;
+}
+
 
 /*-------------- Page portfolio ------------ */
 
@@ -583,7 +656,7 @@ body {
 }
     
 .filter-button {
-    padding: 6px 22px 6px 22px;
+    padding: 6px 22px;
     color: var(--title-text-color);
     background-color: var(--additional-bg-color);
     font-weight: 500;
