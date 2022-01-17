@@ -435,8 +435,8 @@ body {
     align-items: baseline;
 }
 
-.footer-box:not(:last-child) {
-    margin-right: 70px;
+.footer-box + .footer-box {
+    margin-left: 70px;
 }
 
 .footer .logo {
@@ -492,7 +492,8 @@ body {
     background-color: inherit;
 }
 
-.footer-form input::placeholder {
+.footer-form input::placeholder,
+.footer-form input {
     font-size: 16px;
     line-height: 1.25;
     color: var(--address-color);
@@ -502,6 +503,10 @@ body {
     margin-left: 12px;
     padding-left: 29px;
     padding-right: 28px;
+}
+
+.footer-form-icon {
+    margin-left: 10px;
 }
 
 /* modal window */
@@ -586,22 +591,44 @@ body {
 }
 
 .form-field {
+    position: relative;
     display: flex;
     flex-direction: column;
     margin-bottom: 10px;
 }
 
-.form-field label {
+.form-label {
     margin-bottom: 4px;
     font-size: 12px;
     line-height: 1.17;
     letter-spacing: 0.01em;
 }
 
-.form-field input {
-    padding: 11px 12px;
+.form-input {
+    padding: 12px 11px 12px 42px;
     border: 1px solid var(--form-border-color);
     border-radius: 4px;
+}
+
+.form-input:focus {
+    border-color: var(--accent-color);
+}
+
+.form-input:focus + .form-icon {
+    color: var(--accent-color);
+}
+
+.form-icon {
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    display: inline-block;
+    color: var(--title-text-color);
+    transition: color var(--transit-time) var(--timing-function);
+}
+
+.form-icon svg {
+    fill: currentColor;
 }
 
 .form-field.comment {
@@ -609,8 +636,8 @@ body {
 }
 
 .form-field textarea::placeholder {
-    font-size: 12px;
-    line-height: 1.17;
+    font-size: 14px;
+    line-height: 1.14;
     letter-spacing: 0.01em;
     color: var(--textarea-color);
 }
@@ -627,14 +654,32 @@ body {
     margin-bottom: 30px;
 }
 
-.form-policy input {
-    width: 16px;
-    height: 15px;
+.checkbox {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 }
 
-.form-policy label {
-    margin-left: 7px;
+.checkbox-icon {
+    display: inline-block;
+    width: 16px;
+    height: 15px;
+    border: 2px solid var(--title-text-color);
+    border-radius: 2px;
+    margin-right: 7px;
 }
+
+.checkbox:checked + .checkbox-icon {
+    background-image: url(../images/icon-check.svg);
+    background-size: contain;
+    background-color: #fff;
+    background-origin: border-box;
+    border-color: var(--accent-color);
+}
+
+/* .policy-label a {
+    text-decoration: underline solid var(--accent-color);
+} */
 
 .form-btn {
     padding-left: 56px;
