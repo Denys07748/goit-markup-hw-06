@@ -50,6 +50,10 @@ img {
     height: auto;
 }
 
+input,
+textarea {
+    outline: none;
+}
 
 body {
     margin: 0;
@@ -62,8 +66,6 @@ body {
     line-height: 1.71;
     letter-spacing: 0.03em;
 }
-
-
 
 .title {
     color: var(--title-text-color);
@@ -463,8 +465,8 @@ body {
     color: var(--accent-color);
 }
 
-.footer-social-title,
-.footer-form-title {
+.footer-title {
+    font-weight: 700;
     color: var(--primery-bg-color);
     margin-bottom: 20px;
 }
@@ -484,7 +486,7 @@ body {
     margin-left: auto;
 }
 
-.footer-form input {
+.footer-form-input {
     min-width: 358px;
     padding: 15px 16px;
     border: 1px solid rgba(255, 255, 255, 0.3);
@@ -492,8 +494,12 @@ body {
     background-color: inherit;
 }
 
-.footer-form input::placeholder,
-.footer-form input {
+.footer-form-input:focus {
+    border-color: var(--accent-color);
+}
+
+.footer-form-input::placeholder,
+.footer-form-input {
     font-size: 16px;
     line-height: 1.25;
     color: var(--address-color);
@@ -543,6 +549,7 @@ body {
 .modal {
     width: 528px;
     min-height: 581px;
+    padding: 40px;
     background-color: var(--primery-bg-color);
     border-radius: 4px;
 
@@ -578,12 +585,9 @@ body {
 
 /* Forma */
 
-.form {
-    padding: 40px;
-}
-
 .form-title {
     margin-bottom: 12px;
+    font-weight: 700;
     font-size: 20px;
     line-height: 1.15;
     text-align: center;
@@ -635,17 +639,22 @@ body {
     margin-bottom: 20px;
 }
 
-.form-field textarea::placeholder {
+.form-comment::placeholder {
     font-size: 14px;
     line-height: 1.14;
     letter-spacing: 0.01em;
     color: var(--textarea-color);
 }
 
-.form-field textarea {
+.form-comment {
+    resize: none;
     padding: 12px 16px;
     border: 1px solid var(--form-border-color);
     border-radius: 4px;
+}
+
+.form-comment:focus {
+    border-color: var(--accent-color); 
 }
 
 .form-policy {
@@ -655,9 +664,14 @@ body {
 }
 
 .checkbox {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
 }
 
 .checkbox-icon {
@@ -677,13 +691,18 @@ body {
     border-color: var(--accent-color);
 }
 
-/* .policy-label a {
-    text-decoration: underline solid var(--accent-color);
-} */
+.form-policy a {
+    margin-left: 5px;
+    color: var(--accent-color);
+}
 
 .form-btn {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
     padding-left: 56px;
     padding-right: 55px;
+    
 }
 
 
